@@ -1,0 +1,14 @@
+appdirs==1.4.4
+camelcase==0.2
+certifi==2019.11.28
+chardet==3.0.4
+distlib==0.3.1
+docutils==0.16
+filelock==3.0.12
+idna==2.9
+requests==2.23.0
+rstcheck==3.3.1
+six==1.15.0
+tornado==6.0.4
+urllib3==1.25.8
+virtualenv==20.2.2
