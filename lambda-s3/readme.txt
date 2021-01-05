@@ -17,7 +17,7 @@ $ pip install requests
 
 --zip up lambda code
 
-$ zip lambda_function_payload.zip lambda_function.py
+$ zip lambda_function.zip lambda_function.py
 
 (you only need to do this if your using extra dependencies)
 zip all the dependencies from you PIP virtual env
@@ -26,16 +26,16 @@ $ cd YOUR-NAME-SPACE/lib/python3.8/site-packages
 e.g.
 $ cd simple-lambda/lib/python3.8/site-packages/
 
-$ zip -r9 ${OLDPWD}/lambda_function_payload.zip .
+$ zip -r9 ${OLDPWD}/lambda_function.zip .
 
 -zip up python code and add to zip file
 $ cd $OLDPWD
-$ zip -g lambda_function_payload.zip lambda_function.py
+$ zip -g lambda_function.zip lambda_function.py
 
 -----manually upload the lambda function using awscli
 -update existing code (can be used if just the code has been updated)
 
-$ zip -u function.zip lambda_function.py
+$ zip -u lambda_function.zip lambda_function.py
 
 ---creating the function in AWS
 
