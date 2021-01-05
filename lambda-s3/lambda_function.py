@@ -1,6 +1,7 @@
 import boto3
 from botocore.exceptions import ClientError
 import uuid
+import json
 
 bucket_name = "paul-test-bucket-random"
 
@@ -9,7 +10,9 @@ s3_client = boto3.client('s3')
 def lambda_handler(event, context):
     
     print(event)
-    name = event['name']
+    messageBody = json.loads(event['body'])
+    print(messageBody)
+    name = messageBody['name']
     message = 'Hello {}!'.format(name) 
     
     
@@ -20,6 +23,5 @@ def lambda_handler(event, context):
     )
     
     return {
-        "result" : "All Good",
-        "message" : message
+        "body" : message
     }

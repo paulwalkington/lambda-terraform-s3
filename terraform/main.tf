@@ -86,3 +86,10 @@ resource "aws_s3_bucket" "s3_bucket" {
     Environment = "Dev"
   }
 }
+
+module "api-gateway" {
+  source = "./modules/api-gateway"
+
+  lambda_arn = aws_lambda_function.test_lambda.invoke_arn
+  lambda_function_name = aws_lambda_function.test_lambda.function_name
+}
