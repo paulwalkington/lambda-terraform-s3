@@ -35,7 +35,8 @@ $ zip -g lambda_function.zip lambda_function.py
 -----manually upload the lambda function using awscli
 -update existing code (can be used if just the code has been updated)
 
-$ zip -u lambda_function.zip lambda_function.py
+$ zip -u sqs_lambda_function.zip sqs_lambda_function.py
+$ zip -u gateway_lambda_function.zip gateway_lambda_function.py
 
 ---creating the function in AWS
 
