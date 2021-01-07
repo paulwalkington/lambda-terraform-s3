@@ -37,6 +37,7 @@ $ zip -g lambda_function.zip lambda_function.py
 
 $ zip -u sqs_lambda_function.zip sqs_lambda_function.py
 $ zip -u gateway_lambda_function.zip gateway_lambda_function.py
+$ zip -u first_step_function_lambda.zip first_step_function_lambda.py
 
 ---creating the function in AWS
 

@@ -165,13 +165,6 @@ resource "aws_s3_bucket" "s3_bucket" {
   }
 }
 
-module "api-gateway" {
-  source = "./modules/api-gateway"
-
-  lambda_arn = aws_lambda_function.gateway_lambda.invoke_arn
-  lambda_function_name = aws_lambda_function.gateway_lambda.function_name
-}
-
 resource "aws_sqs_queue" "sqs_queue_test" {
   name                      = "paul-example-queue"
   delay_seconds             = 90
@@ -183,4 +176,15 @@ resource "aws_sqs_queue" "sqs_queue_test" {
 resource "aws_lambda_event_source_mapping" "source_mapping_example" {
   event_source_arn = aws_sqs_queue.sqs_queue_test.arn
   function_name    = aws_lambda_function.sqs_lambda.arn
+}
+
+module "api-gateway" {
+  source = "./modules/api-gateway"
+
+  lambda_arn = aws_lambda_function.gateway_lambda.invoke_arn
+  lambda_function_name = aws_lambda_function.gateway_lambda.function_name
+}
+
+module "step-function" {
+  source = "./modules/step-function"
 }
